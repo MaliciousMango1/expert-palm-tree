@@ -743,6 +743,9 @@
 
       <div class="fade-up" style="transition-delay:0.1s">
         <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+          <input type="hidden" name="access_key" value="1b5698b3-6a01-48a7-bfa9-4929faca9fc3">
+          <input type="hidden" name="subject" value="New service request — ZMD Tech">
+          <input type="checkbox" name="botcheck" style="display:none">
           <div class="form-row">
             <div class="field">
               <label for="name">Your name</label>
@@ -807,11 +810,34 @@
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Contact form (Netlify/Cloudflare-ready placeholder)
-  function handleSubmit(e) {
+  // Contact form — Web3Forms
+  async function handleSubmit(e) {
     e.preventDefault();
-    document.getElementById('contact-form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
+    const form = document.getElementById('contact-form');
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send Request';
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Send Request';
+      alert('Something went wrong. Please try again.');
+    }
   }
 </script>
 
