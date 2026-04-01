@@ -373,9 +373,99 @@
       line-height: 1.65;
     }
 
+    /* ── AI ── */
+    #ai {
+      background: var(--charcoal);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ai-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .ai-text h2 {
+      margin-bottom: 1.25rem;
+    }
+
+    .ai-text p {
+      color: #999;
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .ai-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .ai-capabilities {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .ai-cap {
+      background: var(--charcoal-2);
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: background 0.2s;
+    }
+
+    .ai-cap:hover {
+      background: #303030;
+    }
+
+    .ai-cap-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--red-dim);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .ai-cap-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--red);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .ai-cap-text h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+
+    .ai-cap-text p {
+      font-size: 0.88rem;
+      color: #888;
+      line-height: 1.55;
+      margin: 0;
+    }
+
     /* ── CONTACT ── */
     #contact {
-      background: var(--charcoal);
+      background: var(--charcoal-2);
     }
 
     .contact-grid {
@@ -623,6 +713,7 @@
       section { padding: 4rem 1.25rem; }
       .services-header { grid-template-columns: 1fr; gap: 1rem; }
       .services-grid { grid-template-columns: 1fr; }
+      .ai-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .form-row { grid-template-columns: 1fr; }
       .form-submit { flex-direction: column; align-items: flex-start; }
@@ -641,6 +732,7 @@
   </a>
   <ul class="nav-links" role="list">
     <li><a href="#services">Services</a></li>
+    <li><a href="#ai">AI Services</a></li>
     <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
   </ul>
 </nav>
@@ -718,6 +810,70 @@
   </div>
 </section>
 
+<!-- AI -->
+<section id="ai" aria-labelledby="ai-heading">
+  <div class="section-inner">
+    <div class="ai-inner">
+      <div class="ai-text fade-up">
+        <p class="section-label" aria-hidden="true">Emerging tech</p>
+        <h2 id="ai-heading">Artificial<br>Intelligence</h2>
+        <p>
+          AI isn&rsquo;t just for big enterprises anymore. I&rsquo;ve been working hands-on with AI tools across a wide range of business applications — helping clients cut through the hype and put these technologies to real, practical use.
+        </p>
+        <p>
+          From building custom chatbots that handle customer enquiries around the clock, to setting up intelligent automations that eliminate repetitive tasks, I help small businesses harness sophisticated AI tools without needing a dedicated tech team.
+        </p>
+        <p>
+          Every engagement is different — I take the time to understand your workflow, identify where AI can genuinely add value, and set things up so they work reliably in the real world.
+        </p>
+      </div>
+      <div class="ai-capabilities fade-up" style="transition-delay:0.15s">
+
+        <div class="ai-cap">
+          <div class="ai-cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <div class="ai-cap-text">
+            <h4>Custom Chatbots</h4>
+            <p>AI-powered assistants trained on your business, handling FAQs and customer enquiries 24/7.</p>
+          </div>
+        </div>
+
+        <div class="ai-cap">
+          <div class="ai-cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="ai-cap-text">
+            <h4>Workflow Automation</h4>
+            <p>Eliminate repetitive tasks by connecting your tools with intelligent, AI-driven automations.</p>
+          </div>
+        </div>
+
+        <div class="ai-cap">
+          <div class="ai-cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg>
+          </div>
+          <div class="ai-cap-text">
+            <h4>Tool Setup &amp; Training</h4>
+            <p>Hands-on setup of AI platforms and one-on-one training so your team hits the ground running.</p>
+          </div>
+        </div>
+
+        <div class="ai-cap">
+          <div class="ai-cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="ai-cap-text">
+            <h4>Process Optimisation</h4>
+            <p>Identifying where AI can deliver the most measurable impact within your existing workflow.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" aria-labelledby="contact-heading">
   <div class="section-inner">
@@ -743,7 +899,7 @@
 
       <div class="fade-up" style="transition-delay:0.1s">
         <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
-          <input type="hidden" name="access_key" value="1b5698b3-6a01-48a7-bfa9-4929faca9fc3">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
           <input type="hidden" name="subject" value="New service request — ZMD Tech">
           <input type="checkbox" name="botcheck" style="display:none">
           <div class="form-row">
